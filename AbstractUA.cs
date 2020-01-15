@@ -2,28 +2,26 @@
 
 namespace EjemploComposicion
 {
-    partial class Program
+
+    public abstract class AbstractUA
     {
-        public abstract class AbstractUA
+        public AbstractUA() { }
+
+        public abstract decimal ObtenerTotales();
+
+        public virtual void AgregarUAHija(AbstractUA component)
         {
-            public AbstractUA() { }
+            throw new NotImplementedException();
+        }
 
-            public abstract decimal ObtenerTotales();
+        public virtual void QuitarUAHija(AbstractUA component)
+        {
+            throw new NotImplementedException();
+        }
 
-            public virtual void AgregarUAHija(AbstractUA component)
-            {
-                throw new NotImplementedException();
-            }
-
-            public virtual void QuitarUAHija(AbstractUA component)
-            {
-                throw new NotImplementedException();
-            }
-
-            public virtual bool esComposicion()
-            {
-                return true;
-            }
+        public virtual bool esComposicion()
+        {
+            return true;
         }
     }
 }
